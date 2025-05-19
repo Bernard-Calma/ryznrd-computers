@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Tektur } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const tektur = Tektur({
   subsets: ["latin"],
@@ -21,11 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        style={{backgroundColor: "#0c0c0c"}}
+        style={{backgroundColor: "#0c0c0c", minHeight: "100vh"}}
         className={`${tektur.className} ${tektur.className} antialiased `}
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

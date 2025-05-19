@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col items-center justify-center min-h-screen text-white">
       <Banner />
 
       <main className="w-full flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
