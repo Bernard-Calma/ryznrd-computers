@@ -1,8 +1,23 @@
+"use client";
+
+import { RootState } from "@/store/store";
 import React from "react";
+import { useSelector } from "react-redux";
 
 const BuildLayout = ({
     children,
 } : Readonly<{children: React.ReactNode}>  ) => {
+
+    const {
+        processor,
+        motherboard,
+        ram,
+        gpu,
+        storage,
+        powerSupply,
+        case: caseType,
+    } = useSelector((state: RootState) => state.build);
+
     return (
         <main className="flex flex-col h-full p-4 bg-black text-white min-h-screen relative">
             <div className="
@@ -20,7 +35,7 @@ const BuildLayout = ({
                 bg-white/[.25]
                 rounded-lg">
                 <div className="flex space-x-4">
-                    <p>Processor: </p>
+                    <p>Processor: {processor}</p>
                 </div>
                 <div className="flex space-x-4">
                     <p>Motherboard: </p>

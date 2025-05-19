@@ -1,6 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
-type BuildState = {
+interface BuildState {
     processor: string | null;
     motherboard: string | null;
     ram: string | null;
@@ -24,12 +25,26 @@ export const buildSlice = createSlice({
   name: "build",
   initialState,
   reducers: {
+    setPart: (
+      state, 
+      action: PayloadAction<{
+        part: keyof BuildState;
+        value: string;
+      }>
+    ) => {
+      state[action.payload.part] = action.payload.value;
+    },
+    clearBuild: () => initialState
   }
 })
 
 export const {
-
+  setPart,
+  clearBuild
 } = buildSlice.actions;
 
 export default buildSlice.reducer;
 
+// Selectors
+export const completeBuild = (state: RootState) => 
+  Object.values(state.build).every((part) => part !== null);
