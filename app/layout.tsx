@@ -21,7 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${tektur.className} ${tektur.className} antialiased`}
+        style={{backgroundColor: "#0c0c0c"}}
+        className={`${tektur.className} ${tektur.className} antialiased `}
       >
         <Header />
         {children}
