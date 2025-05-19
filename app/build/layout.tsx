@@ -19,7 +19,7 @@ const BuildLayout = ({
     } = useSelector((state: RootState) => state.build);
 
     return (
-        <main className="flex flex-col h-full p-4 bg-black text-white min-h-screen relative">
+        <main className="flex flex-col h-full bg-black text-white min-h-screen relative">
             <div className="
                 current-build 
                 w-full 
@@ -30,30 +30,29 @@ const BuildLayout = ({
                 p-1.5 
                 text-gray-400 
                 sticky 
-                top-20 
+                top-15 
                 z-50
-                bg-white/[.25]
-                rounded-lg">
+                bg-gray-900">
                 <div className="flex space-x-4">
-                    <p>Processor: {processor}</p>
+                    <p>Processor: <span className="text-white">{processor}</span> </p>
                 </div>
                 <div className="flex space-x-4">
-                    <p>Motherboard: </p>
+                    <p>Motherboard: <span className="text-white">{motherboard}</span></p>
                 </div>
                 <div className="flex space-x-4">
-                    <p>RAM: </p>
+                    <p>RAM: <span className="text-white">{ram}</span></p>
                 </div>
                 <div className="flex space-x-4">
-                    <p>GPU: </p>
+                    <p>GPU: <span className="text-white">{gpu}</span></p>
                 </div>
                 <div className="flex space-x-4">
-                    <p>Storage: </p>
+                    <p>Storage: <span className="text-white">{storage}</span></p>
                 </div>
                 <div className="flex space-x-4">
-                    <p>Power Supply: </p>
+                    <p>Power Supply: <span className="text-white">{powerSupply}</span></p>
                 </div>
                 <div className="flex space-x-4">
-                    <p>Case: </p>
+                    <p>Case: <span className="text-white">{caseType}</span></p>
                 </div>
             </div>
             {children}
